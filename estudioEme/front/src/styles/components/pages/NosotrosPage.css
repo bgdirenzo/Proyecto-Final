@@ -1,0 +1,36 @@
+.historia p {
+    font-size: 14px;
+}
+
+.personas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.socios h2 {
+    text-align: center;
+}
+
+.socio {
+    border: 1px solid black;
+    text-align: center;
+    width: 40%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.socio img {
+    border: 1px solid black;
+    border-radius: 50%;
+    max-width: 45%;
+}
+
+.socio p {
+    font-size: 12px;
+}
+
+.socio h5,
+.socio h6 {
+    margin: 0;
+    font-weight: normal;
+}

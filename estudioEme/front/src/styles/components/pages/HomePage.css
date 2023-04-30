@@ -1,0 +1,15 @@
+.bienvenidos {
+    width: 85%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.bienvenidos p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+.columnas {
+    display: flex;
+    justify-content: space-between;
+}
