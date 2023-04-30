@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require('dotenv').config();
-//var pool = require('./models/bdModel');
+var pool = require('./models/bdModel');
 var session = require('express-session');
 
 var indexRouter = require('./routes/index');
@@ -51,9 +51,9 @@ app.use('/admin/login', loginRouter);
 app.use('/admin/clientes', secured, clientesRouter);
 
 //SELECT
-// pool.query('SELECT * FROM clientes').then(function (resultado) {
-//   console.log(resultado)
-// });
+//  pool.query('select * from usuarios').then(function (resultado) {
+//    console.log(resultado)
+//  });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

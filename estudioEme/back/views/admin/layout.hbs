@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="./logosinbg.ico" />
+    <link rel="icon" href="../../public/images/logosinbg.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
@@ -11,36 +11,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <header>
         <div className='holder'>
-            <img src="img/logosinbg.png" width="100" alt="EME" />
+            <img src="../../public/images/logosinbg.png" width="100" alt="EME" />
         </div>
     </header>
-    <nav className='holder'>
-        <div>
+
+    <div className='holder'>
+        <nav>
             <ul>
-                <li>
-                    <NavLink to="/" class="activo">Inicio</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/nosotros" class="activo">Nosotros</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/servicios" class="activo">Servicios</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/clientes" class="activo">Clientes</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/contacto" class="activo">Contacto</NavLink>
-                </li>
+                <li><a href="/" class="activo">Inicio</a></li>
+                <li><a href="/admin/clientes" class="activo">Clientes</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </div>
     {{{body}}}
     <footer>
         <p>Derechos reservados &copy;. EME - Estudio Contable</p>

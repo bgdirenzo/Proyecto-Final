@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 26-04-2023 a las 14:25:15
+-- Tiempo de generación: 30-04-2023 a las 15:49:17
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.0.26
 
@@ -48,6 +48,28 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 
 INSERT INTO `clientes` (`idCliente`, `nomApellido`, `nroCuit`, `claveAfip`, `claveArba`, `claveMuni`, `clavePami`, `email`, `agremiacion`, `fechaIngreso`) VALUES
 (1, 'Di Renzo Barbara', 1145287965, '6cc04c94d50654e362d3c1a64a23b907', 'dee1a8dddb3685f1bef2b8e4c94dba6e', '6a4d823d12e8d6ec6ff4eaf836104b86', '906cc6bf37ebc9f777eaa737d9663de3', 'barbydirenzo@hotmail.com', 'UPCN', '2023-04-26');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(3, 'bdirenzo', '28a778eabf37a90907809520f5574968');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
