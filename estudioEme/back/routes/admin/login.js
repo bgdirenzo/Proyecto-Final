@@ -9,12 +9,12 @@ router.get('/', function (req, res, next) {
   });
 });
 
-/*router.get('/logout', function (req, res, next) {
+router.get('/logout', function (req, res, next) {
   req.session.destroy();
   res.render('admin/login', {
     layout: 'admin/layout'
   });
-});*/
+});
 
 
 /*POST home page */
@@ -29,7 +29,6 @@ router.post('/', async (req, res, next) => {
 
       req.session.id_usuario = data.id;
       req.session.nombre = data.usuario;
-
       res.redirect('admin/clientes');
     } else {
       res.render('admin/login', {
