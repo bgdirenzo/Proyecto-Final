@@ -4,9 +4,16 @@ var usuariosModel = require('../../models/usuariosModel');
 
 /*GET home page */
 router.get('/', function (req, res, next) {
-  res.render('admin/login', {
-    layout: 'admin/layout'
-  });
+  if (!req.session.nombre) {
+    res.render('admin/login', {
+      layout: 'admin/layout'
+    });
+  } else {
+    res.render('index', {
+      layout: 'admin/layout',
+      persona: req.session.nombre
+    });
+  }
 });
 
 router.get('/logout', function (req, res, next) {
@@ -31,7 +38,10 @@ router.post('/', async (req, res, next) => {
       req.session.id_usuario = data.id_usuario;
       req.session.nombre = data.usuario;
 
-      res.redirect('/admin/clientes');
+      res.render('index', {
+        layout: 'admin/layout',
+        persona: req.session.nombre
+      });
     } else {
       res.render('admin/login', {
         layout: 'admin/layout',
