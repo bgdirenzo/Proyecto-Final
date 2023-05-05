@@ -1,0 +1,41 @@
+<div class="holder">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Agregar un nuevo cliente</h4>
+            <form action="/admin/clientes/agregar" method="post">
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Apellido y Nombre" name="nomApellido">
+                </div>
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Numero de Cuit" name="nroCuit">
+                </div>
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Clave AFIP" name="claveAfip">
+                </div>
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Clave ARBA" name="claveArba">
+                </div>
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Clave MUNI" name="claveMuni">
+                </div>
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Clave Pami" name="clavePami">
+                </div>
+                <div class="mb-3 row">
+                    <input type="email" class="form-control" placeholder="Email" name="email">
+                </div>
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Agremiacion" name="agremiacion">
+                </div>
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="aaaa/mm/dd" name="fechaIngreso">
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+
+            {{#if error}}
+                <h5 class="text-danger">{{message}}</h5>
+            {{/if}}
+        </div>
+    </div>
+</div>
