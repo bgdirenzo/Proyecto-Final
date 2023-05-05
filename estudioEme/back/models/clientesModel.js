@@ -17,4 +17,26 @@ async function insertCliente(obj) {
     }
 }
 
-module.exports = { getClientes, insertCliente }
+async function deleteClienteById(id) {
+    var query = "delete from clientes where idCliente = ?";
+    var rows = await pool.query(query, [id]);
+    return rows;
+}
+
+async function getClienteById(id) {
+    var query = "select * from clientes where idCliente = ?";
+    var rows = await pool.query(query, [id]);
+    return rows[0];
+}
+
+async function modificarClienteById(obj, id) {
+    try{
+        var query = "update clientes set ? where idCliente = ?";
+        var rows = await pool.query(query, [obj, id]);
+        return rows;
+    } catch (error) {
+        throw error;
+    }
+}
+
+module.exports = { getClientes, getClienteById, insertCliente, deleteClienteById, modificarClienteById }

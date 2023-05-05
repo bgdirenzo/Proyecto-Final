@@ -18,6 +18,21 @@ router.get('/agregar', (req, res, next) => {
     });
 });
 
+router.get('/eliminar/:id', async (req, res, next) => {
+    var id = req.params.id;
+    await clientesModel.deleteClienteById(id);
+    res.redirect('/admin/clientes')
+});
+
+router.get('/modificar/:id', async (req, res, next) => {
+    var id = req.params.id;
+    var cliente = await clientesModel.getClienteById(id);
+    res.render('admin/modificar', {
+        layout: 'admin/layout',
+        cliente
+    });
+});
+
 /* POST homepage */
 router.post('/agregar', async (req, res, next) => {
     try {
@@ -37,9 +52,35 @@ router.post('/agregar', async (req, res, next) => {
             layout: 'admin/layout',
             error: true,
             message: 'No se cargó el cliente'
-        });;
+        });
     }
 });
 
+router.post('/modificar', async (req, res, next) => {
+    try {
+        let obj = {
+            nomApellido: req.body.nomApellido,
+            nroCuit: req.body.nroCuit,
+            claveAfip: req.body.claveAfip,
+            claveArba: req.body.claveArba,
+            claveMuni: req.body.claveMuni,
+            clavePami: req.body.clavePami,
+            email: req.body.email,
+            agremiacion: req.body.agremiacion,
+            fechaIngreso: req.body.fechaIngreso
+        }
+        
+        await clientesModel.modificarClienteById(obj, req.body.id);
+        res.redirect('/admin/clientes');
+
+    } catch (error) {
+        console.log(error)
+        res.render('admin/modificar', {
+            layout: 'admin/layout',
+            error: true,
+            message: 'No se pudo modificar el cliente'
+        });
+    }
+});
 
 module.exports = router;
