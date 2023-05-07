@@ -7,11 +7,13 @@ var logger = require('morgan');
 require('dotenv').config();
 var pool = require('./models/bdModel');
 var session = require('express-session');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var clientesRouter = require('./routes/admin/clientes');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -49,6 +51,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/clientes', secured, clientesRouter);
+app.use('/api', cors(), apiRouter);
 
 //SELECT
 //  pool.query('select * from usuarios').then(function (resultado) {
