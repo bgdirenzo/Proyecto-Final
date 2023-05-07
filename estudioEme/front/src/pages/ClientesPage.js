@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import ClienteItem from '../components/clientes/clienteItem';
 import '../styles/components/pages/ClientesPage.css';
 
 
 const ClientesPage = (props) => {
+    const [loading, setLoading] = useState(false);
+    const [clientes, setClientes] = useState([]);
+
+    useEffect(() => {
+        const cargarClientes = async () => {
+            setLoading(true);
+            const response = await axios.get('http://localhost:3000/api/clientes');
+            setClientes(response.data);
+            setLoading(false);
+        };
+
+        cargarClientes();
+    }, []);
+
     return (
-        <main class="holder">
-                <div class="columnas">
-            <div class="bienvenidos">
-                <h2>Bienvenidos!</h2>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum enim maxime similique tenetur iure,
-                    error
-                    unde sit adipisci, distinctio non dignissimos debitis ullam veniam cupiditate! Dolorem voluptate
-                    commodi
-                    amet voluptates?
-                </p>
-            </div>
-        </div>
-    </main>
+        <section className="holder">
+            <h2>Clientes</h2>
+            {loading ? (
+                <p>Cargando..</p>
+            ) : (
+                clientes.map(item => <ClienteItem key={item.id}
+                    name={item.nomApellido} cuit={item.nroCuit} email={item.email}/>)
+            )}
+        </section>
     );
+
 }
 
 export default ClientesPage;
