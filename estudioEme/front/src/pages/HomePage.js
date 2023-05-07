@@ -4,7 +4,7 @@ import '../styles/components/pages/HomePage.css';
 
 const HomePage = (props) => {
     return (
-        <main class="holder">
+        <main class="holder main">
         <div>
             <img src="img/index/img03.jpg" width="900" height="370" alt="Escritorio" />
         </div>

@@ -21,13 +21,15 @@ const ClientesPage = (props) => {
 
     return (
         <section className="holder">
-            <h2>Clientes</h2>
-            {loading ? (
-                <p>Cargando..</p>
-            ) : (
-                clientes.map(item => <ClienteItem key={item.id}
-                    name={item.nomApellido} cuit={item.nroCuit} email={item.email}/>)
-            )}
+            <div className="row">
+                <h2>Clientes</h2>
+                {loading ? (
+                    <p>Cargando..</p>
+                ) : (
+                    clientes.map(item => <ClienteItem key={item.id}
+                        name={item.nomApellido} cuit={item.nroCuit} email={item.email} />)
+                )}
+            </div>
         </section>
     );
 
