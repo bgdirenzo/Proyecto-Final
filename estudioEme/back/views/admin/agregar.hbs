@@ -31,10 +31,13 @@
                     <input type="text" class="form-control" placeholder="aaaa/mm/dd" name="fechaIngreso">
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="/admin/clientes" title="Cancelar" class="btn btn-danger"><i class="fa fa-close"
+                        aria-hidden="true"></i></a>
+
             </form>
 
             {{#if error}}
-                <h5 class="text-danger">{{message}}</h5>
+            <h5 class="text-danger">{{message}}</h5>
             {{/if}}
         </div>
     </div>

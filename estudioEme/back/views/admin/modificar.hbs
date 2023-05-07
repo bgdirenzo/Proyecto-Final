@@ -7,31 +7,32 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Apellido y Nombre" name="nomApellido" value="{{cliente.nomApellido}}"></input>
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="Numero de Cuit" name="nroCuit" value="{{cliente.nroCuit}}">
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="Clave AFIP" name="claveAfip" value="{{cliente.claveAfip}}">
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="Clave ARBA" name="claveArba" value="{{cliente.claveArba}}">
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="Clave MUNI" name="claveMuni" value="{{cliente.claveMuni}}">
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="Clave Pami" name="clavePami" value="{{cliente.clavePami}}">
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email" name="email" value="{{cliente.email}}">
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="Agremiacion" name="agremiacion" value="{{cliente.agremiacion}}">
                 </div>
-                <div class="mb-3 row">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="aaaa/mm/dd" name="fechaIngreso" value="{{cliente.fechaIngreso}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Modificar</button>
+                <a href="/admin/clientes" title="Cancelar" class="btn btn-danger"><i class="fa fa-close" aria-hidden="true"></i></a>
             </form>
 
             {{#if error}}

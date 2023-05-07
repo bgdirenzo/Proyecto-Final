@@ -8,6 +8,7 @@ body {
   max-width: 960px;
   /*Esto es para resoluciones de 1024*/
   margin: 0 auto;
+  margin-top: 15px;
 }
 
 h2 {
@@ -16,19 +17,23 @@ h2 {
 
 footer {
   text-align: center;
-  clear: both;  /*preguntar que hacía*/
+  clear: both;
+  /*preguntar que hacía*/
   color: #444;
   font-size: 10px;
 }
 
 header {
   background-color: #EFEFEF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin: 0;
   margin-bottom: 15px;
 }
