@@ -15,8 +15,9 @@ router.post('/contacto', async (req,res)=> {
     const mail = {
       to: 'barbara.direnzo@gba.gob.ar',
       subject: 'Contacto a EME',
-      html: `${req.body.nombre} se contactó a traves de la web y quiere más información a este correo: ${req.body.email}
-            <br/> Además, deja el siguiente mensaje: ${req.body.mensaje}`
+      html: `<strong>${req.body.nombre}</strong> se contactó a través de la web y quiere más información al correo: <u>${req.body.email}</u>
+            <br/> Además, deja el siguiente mensaje: 
+            <br/> - ${req.body.mensaje}`
     }
   
     const transport = nodemailer.createTransport({
