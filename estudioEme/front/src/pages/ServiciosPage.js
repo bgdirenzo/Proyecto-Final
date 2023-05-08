@@ -4,7 +4,7 @@ import '../styles/components/pages/ServiciosPage.css';
 
 const ServiciosPage = (props) => {
     return (
-        <main class="holder caja">
+        <main class="holder caja" style={{marginTop: 15 + 'px'}}>
         <div class="contenedor">
             <div class="item">
                 <h2>Consultoría</h2>

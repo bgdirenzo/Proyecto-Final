@@ -20,7 +20,7 @@ const ClientesPage = (props) => {
     }, []);
 
     return (
-        <section className="holder">
+        <section className="holder" style={{marginTop: 15 + 'px'}}>
             <div className="row">
                 <h2>Clientes</h2>
                 {loading ? (

@@ -3,7 +3,7 @@ import '../styles/components/pages/NosotrosPage.css';
 
 const NosotrosPage = (props) => {
     return (
-        <main class="holder">
+        <main class="holder" style={{marginTop: 15 + 'px'}}>
         <div class="columnas">
             <div class="historia">
                 <h2>El Estudio</h2>

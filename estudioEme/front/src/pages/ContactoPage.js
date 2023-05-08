@@ -4,7 +4,7 @@ import '../styles/components/pages/ContactoPage.css';
 
 const ContactoPage = (props) => {
     return (
-        <main class="holder contacto">
+        <main class="holder contacto" style={{marginTop: 15 + 'px'}}>
         <div>
             <h2>Contactanos!</h2>
             <form action="" method="" class="formulario">
