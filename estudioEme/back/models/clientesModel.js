@@ -1,7 +1,7 @@
 var pool = require('./bdModel');
 
 async function getClientes() {
-    var query = "select * from clientes";
+    var query = "select * from clientes order by nomApellido asc";
     var rows = await pool.query(query);
     return rows;
 }
